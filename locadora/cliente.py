@@ -4,12 +4,12 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 
-from flaskr.db import get_db
+from locadora.db import get_db
 
 bp = Blueprint('cliente', __name__, url_prefix="/cliente")
 
 
-@bp.route('/create', methods=('POST'))
+@bp.route('/create', methods=('POST',))
 def create():
     if request.method == 'POST':
         pass
