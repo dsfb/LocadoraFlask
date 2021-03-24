@@ -6,7 +6,11 @@ from flask import (
 
 from locadora.db import get_db
 
-bp = Blueprint('filme', __name__, url_prefix="/filme", template_folder='templates')
+bp = Blueprint('filme', __name__, url_prefix="/filme")
+
+@bp.route('/mostrar', methods=('GET',))
+def mostrar():
+    return render_template('templates/mostrar.html')
 
 @bp.route('/cadastrar', methods=('POST',))
 def cadastrar():

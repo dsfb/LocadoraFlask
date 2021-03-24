@@ -9,5 +9,13 @@ CREATE TABLE cliente (
 CREATE TABLE filme (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   nome TEXT UNIQUE NOT NULL,
-  preco TEXT NOT NULL
+  preco REAL
+);
+
+CREATE TABLE aluguel (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  id_cliente INTEGER NULL,
+  id_filme INTEGER NULL,
+  FOREIGN KEY(id_cliente) REFERENCES cliente(id),
+  FOREIGN KEY(id_filme) REFERENCES filme(id)
 );

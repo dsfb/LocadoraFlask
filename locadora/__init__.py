@@ -9,6 +9,7 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY=b'\x05\xc2\xff\x08\xc1\xcd\xd2\x8a\x1cj\x9a\xa8b+\xf3f',
         DATABASE=os.path.join(app.instance_path, 'locadora.sqlite'),
+        EXPLAIN_TEMPLATE_LOADING=True,
     )
 
     if test_config is None:
